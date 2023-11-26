@@ -43,7 +43,10 @@ const InviteCodePage: React.FC<InviteCodePageProps> = async ({ params }) => {
       },
     },
   });
-  return <div>Invite !</div>;
+  if (server) {
+    return redirect(`/servers/${server.id}`)
+  }
+  return null;
 };
 
 export default InviteCodePage;
