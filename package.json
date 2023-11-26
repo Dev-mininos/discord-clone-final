@@ -9,7 +9,8 @@
     "lint": "next lint",
     "generate": "npx prisma generate",
     "push": "npx prisma db push",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "reset":"npx prisma migrate reset"
   },
   "dependencies": {
     "@clerk/nextjs": "4.27.1",
