@@ -8,6 +8,7 @@ const font = Open_Sans({ subsets: ["latin"] });
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 export const metadata: Metadata = {
   title: "Discord-clone",
@@ -31,6 +32,7 @@ export default function RootLayout({
             storageKey="discord-theme"
           >
             {children}
+            <ModalProvider />
           </ThemeProvider>
         </body>
       </html>
