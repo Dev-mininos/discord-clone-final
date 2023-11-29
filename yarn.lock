@@ -19,12 +19,12 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@clerk/backend@0.34.1":
-  version "0.34.1"
-  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-0.34.1.tgz#b0668f6354666a7e91b9ef5ff084de1680463e35"
-  integrity sha512-I6u7vb7XHA0kNek5Ez4VVqBDZKxLepR6wJXlYUy5lGwsTdaQiFwy5Q0nKP2GdQQYtlKpXSAryLu19Cq5zaaNYg==
+"@clerk/backend@0.34.2":
+  version "0.34.2"
+  resolved "https://registry.yarnpkg.com/@clerk/backend/-/backend-0.34.2.tgz#5a66526dc60bfdc7017bef8d346a824b056d7425"
+  integrity sha512-ouulkcT6kfbAPw3w0vbkl758KzQ2y9UUnuhRJ5dY3SPGNjJnpes1BNETLnA1O3llZVV5yYexluhee4XmFcwV3A==
   dependencies:
-    "@clerk/shared" "1.1.0"
+    "@clerk/shared" "1.1.1"
     "@clerk/types" "3.58.0"
     "@peculiar/webcrypto" "1.4.1"
     "@types/node" "16.18.6"
@@ -34,22 +34,22 @@
     snakecase-keys "5.4.4"
     tslib "2.4.1"
 
-"@clerk/clerk-react@4.28.0":
-  version "4.28.0"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-4.28.0.tgz#7fd6b873d016f18f7dae5045b708a39621e6412f"
-  integrity sha512-zMFdiqqXkwAks1xmheUrAS6GODDdlpsCHA3VEnNVlSL0XH3bE4jWNr7lr0SJMmcaEsmZE/JQ+uNPJ4qEvEDGjA==
+"@clerk/clerk-react@4.28.1":
+  version "4.28.1"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-react/-/clerk-react-4.28.1.tgz#19a27cde5763e613821d783c00cf839f1c57c855"
+  integrity sha512-xfdLOqnbONwt+/kUh5+Fzs0wAJcLD4Bc0mM/af0Wlu1zdnggVR8da29fw+pZL5p8VGXavxP3hJdS9vvj5hFX+g==
   dependencies:
-    "@clerk/shared" "1.1.0"
+    "@clerk/shared" "1.1.1"
     "@clerk/types" "3.58.0"
     tslib "2.4.1"
 
-"@clerk/clerk-sdk-node@4.12.21":
-  version "4.12.21"
-  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-4.12.21.tgz#6f80f2f5649285240309e9af1ec74c5e4bcb9684"
-  integrity sha512-43MdviLlAG3naNzRyxF/Io8YYQBnFEIQiqYFVHzKzZGEsbPST9lBfeFxJZKrCqSE8K7gMx3+3D87bveXq6a7cA==
+"@clerk/clerk-sdk-node@4.12.22":
+  version "4.12.22"
+  resolved "https://registry.yarnpkg.com/@clerk/clerk-sdk-node/-/clerk-sdk-node-4.12.22.tgz#d584427848764952cbd010bed06114fa969d217f"
+  integrity sha512-O1PWDzmECO8VoGEZG8m2QYkJzDDMiUqTGsn73u3ki1V2bX24BeFokSKlsLgklgpVXUhSeKp8A8wBrDOOY2Qpew==
   dependencies:
-    "@clerk/backend" "0.34.1"
-    "@clerk/shared" "1.1.0"
+    "@clerk/backend" "0.34.2"
+    "@clerk/shared" "1.1.1"
     "@clerk/types" "3.58.0"
     "@types/cookies" "0.7.7"
     "@types/express" "4.17.14"
@@ -58,23 +58,23 @@
     snakecase-keys "3.2.1"
     tslib "2.4.1"
 
-"@clerk/nextjs@4.27.1":
-  version "4.27.1"
-  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-4.27.1.tgz#e9825b7c4cfa277e91bd5cc04ef84709185d09bc"
-  integrity sha512-FsAwVqCNNOjTC3w9mHjc/T4uP/JzGni0WTXANNXjC4sfh2kDfBzUMLRPNfcgAou5TOsMqYJdRxQ5sx4eCGQIOA==
+"@clerk/nextjs@4.27.2":
+  version "4.27.2"
+  resolved "https://registry.yarnpkg.com/@clerk/nextjs/-/nextjs-4.27.2.tgz#0c53f591234605133fe315c0cdf157a62f9ac2ad"
+  integrity sha512-zIwzDa5ph9ZPBFSshtFK2LSH61NK0v9ifIPVsQSpVupUzUkJUat8s2n/8GRY93o/3zBTeaCJZQZyIejFCpO9gg==
   dependencies:
-    "@clerk/backend" "0.34.1"
-    "@clerk/clerk-react" "4.28.0"
-    "@clerk/clerk-sdk-node" "4.12.21"
-    "@clerk/shared" "1.1.0"
+    "@clerk/backend" "0.34.2"
+    "@clerk/clerk-react" "4.28.1"
+    "@clerk/clerk-sdk-node" "4.12.22"
+    "@clerk/shared" "1.1.1"
     "@clerk/types" "3.58.0"
     path-to-regexp "6.2.1"
     tslib "2.4.1"
 
-"@clerk/shared@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-1.1.0.tgz#d5ca33acc7348bbb60e21733d47d1863099a1db3"
-  integrity sha512-rxQ6bxAERZsf/dzCU35qt3gRp9+a035Vrre8j8tyT60dbP8PQhXUbeNu+oVqqjpHWeyoWWt6fZGLXbDTXdXx7g==
+"@clerk/shared@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@clerk/shared/-/shared-1.1.1.tgz#7844edcaad285a98528e754b82909015065002d0"
+  integrity sha512-pEzhalD1Yo/gGsOE2BQugVQTjlIl2aYmoeRld3BDXHRDV1jnk+yUE2CFOw6bojgFWN9sbeN/ph/47UWvvoCSOg==
   dependencies:
     glob-to-regexp "0.4.1"
     js-cookie "3.0.1"
@@ -1140,7 +1140,7 @@ axe-core@=4.7.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.7.0.tgz#34ba5a48a8b564f67e103f0aa5768d76e15bbbbf"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
-axios@1.6.2:
+axios@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.2.tgz#de67d42c755b571d3e698df1b6504cde9b0ee9f2"
   integrity sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==
