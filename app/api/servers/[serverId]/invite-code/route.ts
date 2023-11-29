@@ -1,4 +1,4 @@
-import { cuurentProfile } from "@/lib/current-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
@@ -7,7 +7,7 @@ export async function PATCH(
   { params }: { params: { serverId: string } },
 ) {
   try {
-    const profile = await cuurentProfile();
+    const profile = await currentProfile();
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
     }

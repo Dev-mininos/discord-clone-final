@@ -1,4 +1,4 @@
-import { cuurentProfile } from "@/lib/current-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";
@@ -8,7 +8,7 @@ interface ServerSideProps {
   serverId: string;
 }
 const ServerSideBar: React.FC<ServerSideProps> = async ({ serverId }) => {
-  const profile = await cuurentProfile();
+  const profile = await currentProfile();
   if (!profile) {
     return redirect("/");
   }

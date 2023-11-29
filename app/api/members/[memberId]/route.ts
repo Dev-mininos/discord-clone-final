@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { cuurentProfile } from "@/lib/current-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 
 export async function DELETE(
@@ -8,7 +8,7 @@ export async function DELETE(
   { params }: { params: { memberId: string } },
 ) {
   try {
-    const profile = await cuurentProfile();
+    const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
 
     const serverId = searchParams.get("serverId");
@@ -64,7 +64,7 @@ export async function PATCH(
   { params }: { params: { memberId: string } },
 ) {
   try {
-    const profile = await cuurentProfile();
+    const profile = await currentProfile();
     const { searchParams } = new URL(req.url);
     const { role } = await req.json();
 

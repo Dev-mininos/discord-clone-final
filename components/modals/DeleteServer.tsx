@@ -9,22 +9,24 @@ import {
 } from "@/components/ui/dialog";
 import { useModal } from "@/hooks/use-modal-store";
 import { Button } from "../ui/button";
+import { Check, Copy, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-export const LeaveServerModal = () => {
+export const DeleteServerModal = () => {
   const { isOpen, onClose, type, data } = useModal();
-  const isModalOpen = isOpen && type == "leaveServer";
+  const isModalOpen = isOpen && type == "deleteServer";
   const { server } = data;
   const [isLoading, setisLoading] = useState(false);
   const router = useRouter();
   const onClick = async () => {
     try {
       setisLoading(true);
-      await axios.patch(`/api/servers/${server?.id}/leave`);
-      onClose();
+      await axios.delete(`/api/servers/${server?.id}/leave`);
       router.refresh();
       router.push("/");
+      onClose();
+      router;
     } catch (error) {
       console.log(error);
     } finally {
@@ -36,14 +38,13 @@ export const LeaveServerModal = () => {
       <DialogContent className="overflow-hidden bg-white p-0 text-black">
         <DialogHeader className="px-6 pt-8">
           <DialogTitle className="text-center text-2xl font-bold">
-            Leave Server
+            Delete Server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
-            Sure thb to5reg mn
+            Sure thb tna7i serveur <br />
             <span className="font-semibold text-indigo-500">
               {server?.name}
             </span>
-            ?
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="bg-gray-100 px-6 py-4">

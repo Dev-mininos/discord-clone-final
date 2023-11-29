@@ -1,4 +1,4 @@
-import { cuurentProfile } from "@/lib/current-profile";
+import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import NavigationAction from "./NavigationAction";
@@ -9,7 +9,7 @@ import { ModeToggle } from "../mode-toogle";
 import { UserButton } from "@clerk/nextjs";
 
 const NavigationSideBar = async () => {
-  const profile = await cuurentProfile();
+  const profile = await currentProfile();
   if (!profile) {
     return redirect("/");
   }
