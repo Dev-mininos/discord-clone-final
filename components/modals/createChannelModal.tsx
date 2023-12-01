@@ -34,6 +34,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ChannelType } from "@prisma/client";
+import { useEffect } from "react";
 
 const formSchema = z.object({
   name: z
@@ -46,8 +47,10 @@ const formSchema = z.object({
     }),
   type: z.nativeEnum(ChannelType),
 });
+
 export const CreateChannelModal = () => {
-  const { isOpen, onClose, type } = useModal();
+  const { isOpen, onClose, type, data } = useModal();
+  const { channelType } = data;
   const isModalOpen = isOpen && type == "createChannel";
   const router = useRouter();
   const params = useParams();
@@ -55,9 +58,21 @@ export const CreateChannelModal = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      type: ChannelType.TEXT,
+      type: ChannelType.TEXT || channelType,
     },
   });
+
+  useEffect(() => {
+    if (channelType) {
+      form.setValue("type", channelType);
+    } else {
+      form.setValue("type", ChannelType.TEXT);
+    }
+  }, [channelType, form]);
+  const handleClose = () => {
+    form.reset();
+    onClose();
+  };
   const isLoading = form.formState.isSubmitting;
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
@@ -75,16 +90,13 @@ export const CreateChannelModal = () => {
       console.log(error);
     }
   };
-  const handleClose = () => {
-    form.reset();
-    onClose();
-  };
+
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="overflow-hidden bg-white p-0 text-black">
         <DialogHeader className="px-6 pt-8">
           <DialogTitle className="text-center text-2xl font-bold">
-            Create Chanel
+            Create Channel
           </DialogTitle>
         </DialogHeader>
         <Form {...form}>
