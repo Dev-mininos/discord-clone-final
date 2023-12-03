@@ -8,7 +8,7 @@ import { MembersModal } from "../modals/ManageMembers";
 import { CreateChannelModal } from "../modals/createChannelModal";
 import { LeaveServerModal } from "../modals/LeaveServer";
 import { DeleteServerModal } from "../modals/DeleteServer";
-
+import { DeleteChannelModal } from "../modals/DeleteChannel";
 export const ModalProvider = () => {
   const [isMounted, setisMounted] = useState(false);
   useEffect(() => {
@@ -26,6 +26,7 @@ export const ModalProvider = () => {
       <CreateChannelModal />
       <LeaveServerModal />
       <DeleteServerModal />
+      <DeleteChannelModal />
     </>
   );
 };
