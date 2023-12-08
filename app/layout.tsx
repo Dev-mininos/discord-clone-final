@@ -9,6 +9,7 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { ModalProvider } from "@/components/providers/modal-provider";
+import { SocketProvider } from "@/components/providers/SocketProvider";
 
 export const metadata: Metadata = {
   title: "Discord-clone",
@@ -31,8 +32,10 @@ export default function RootLayout({
             enableSystem
             storageKey="discord-theme"
           >
-            {children}
-            <ModalProvider />
+            <SocketProvider>
+              {children}
+              <ModalProvider />
+            </SocketProvider>
           </ThemeProvider>
         </body>
       </html>
