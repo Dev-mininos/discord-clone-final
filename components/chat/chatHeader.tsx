@@ -2,6 +2,7 @@ import { Hash, Menu } from "lucide-react";
 import { MobileToggle } from "../MobileToogle";
 import UserAvatar from "../userAvatar";
 import { SocketIndicator } from "../SocketIndicator";
+import { useModal } from "@/hooks/use-modal-store";
 interface ChatHeaderProps {
   serverId: string;
   name: string;
