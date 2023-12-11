@@ -10,6 +10,7 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { SocketProvider } from "@/components/providers/SocketProvider";
+import { QueryProvider } from "@/components/providers/QueryProvider";
 
 export const metadata: Metadata = {
   title: "Discord-clone",
@@ -33,7 +34,8 @@ export default function RootLayout({
             storageKey="discord-theme"
           >
             <SocketProvider>
-              {children}
+              <QueryProvider>{children}</QueryProvider>
+
               <ModalProvider />
             </SocketProvider>
           </ThemeProvider>

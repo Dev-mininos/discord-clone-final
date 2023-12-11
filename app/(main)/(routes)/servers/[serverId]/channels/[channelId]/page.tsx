@@ -1,4 +1,5 @@
 import { ChatInput } from "@/components/chat/ChatInput";
+import { ChatMessage } from "@/components/chat/ChatMessage";
 import { ChatHeader } from "@/components/chat/chatHeader";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
@@ -33,7 +34,17 @@ const ChannelIdPage: React.FC<ChannelIdPageProps> = async ({ params }) => {
         serverId={channel.serverId}
         type="channel"
       />
-      <div className="flex-1">Future Message</div>
+      <ChatMessage
+        member={member}
+        name={channel.name}
+        type="channel"
+        apiUrl="/api/messages"
+        socketUrl="/api/socket/messages"
+        socketQuery={{ channelId: channel.id, serverId: channel.serverId }}
+        paramKey="channelId"
+        paramValue={channel.id}
+        chatId={channel.id}
+      />
       <ChatInput
         name={channel.name}
         type="channel"
