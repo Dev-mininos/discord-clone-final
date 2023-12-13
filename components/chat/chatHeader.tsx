@@ -3,6 +3,7 @@ import { MobileToggle } from "../MobileToogle";
 import UserAvatar from "../userAvatar";
 import { SocketIndicator } from "../SocketIndicator";
 import { useModal } from "@/hooks/use-modal-store";
+import { ChatVideButton } from "./ChatVideoButton";
 interface ChatHeaderProps {
   serverId: string;
   name: string;
@@ -27,6 +28,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
       )}
       <p className="text-md font-semibold text-black dark:text-white">{name}</p>
       <div className="ml-auto flex items-center">
+        {type === "conversation" && <ChatVideButton />}
         <SocketIndicator />
       </div>
     </div>
